@@ -1,64 +1,123 @@
-/* General Styles */
-body {
+html, body {
+    height: 100%; /* Ensure the HTML and body take up the full height of the viewport */
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-/* Header */
+body {
+    display: flex;
+    flex-direction: column; /* Stack header, main, and footer vertically */
+}
+
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #007BFF;
+}
 header {
-    background: #28a745;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-    list-style: none;
-    text-decoration: none;
-
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Main Content */
-main {
-    padding: 20px;
-    flex: 1; 
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
+    justify-content: space-between;
     align-items: center;
-    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-section {
+header .logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header .navbar ul li {
+    margin-left: 20px;
+}
+
+header .navbar ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+header .navbar ul li a:hover {
+    color: #d4f7d4;
+}
+
+/* Main Content Styles */
+main {
+    flex: 1; /* Allow main to grow and take up remaining space */
+    padding: 20px;
+}
+
+.hero {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-/* Footer */
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+}
+
+
+.about, .features {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.about h2, .features h2 {
+    font-size: 28px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 16px;
+    color: #666;
+}
+
+.features ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.features ul li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
 footer {
-    background: #333;
-    color: #fff;
+    background-color: #333;
+    color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
+    flex-shrink: 0; /* Prevent footer from shrinking */
 }

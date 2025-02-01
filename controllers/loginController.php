@@ -50,9 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         if ($role == 'admin') {
                             header("Location: ../views/adminDashboard.php");
                         } 
-                        else {
-                            header("Location: ../views/dashboard.php");
-                        }
+                        
                         exit();
                     } else {
                         $error = "Invalid username or password.";

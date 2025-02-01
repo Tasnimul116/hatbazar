@@ -7,3 +7,18 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+
+CREATE TABLE IF NOT EXISTS products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    farmer_id INT NOT NULL, 
+    crop_name VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),  
+    location VARCHAR(100) NOT NULL,
+    contact VARCHAR(50) NOT NULL,
+    delivery_time DATETIME NOT NULL,
+    transaction_method ENUM('Cash on Delivery', 'Bkash', 'Bank Transfer') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (farmer_id) REFERENCES users(id) ON DELETE CASCADE, 
+    INDEX idx_farmer_id (farmer_id) 
+);

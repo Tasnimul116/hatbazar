@@ -7,19 +7,20 @@
     <script src="../public/js/register.js" defer></script>
 </head>
 <body>
-    <header>
+<header>
         <div class="logo">
             <h1>Hatbazar</h1>
-            <nav class="navbar">
+        </div>
+        <nav class="navbar">
             <ul>
-            <li><a href="../index.php">Home</a></li>
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="./about.php">About Us</a></li>
                 <li><a href="./contact.php">Contact</a></li>
-                <li><a href="./login.php">Log in</a></li>
+                <li><a href="./login.php">Login</a></li>
             </ul>
         </nav>
-        </div>
     </header>
+
 
     <main>
         <section class="register">

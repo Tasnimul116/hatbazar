@@ -50,10 +50,10 @@
        
     </main>
 
-    <!-- Footer Section
+
     <footer>
         <p>&copy; 2025 Hatbazar. All rights reserved. | Agricultural Marketplace</p>
-    </footer> -->
+    </footer>
 
     <script src="js/scripts.js"></script> <!-- External JavaScript -->
 </body>
