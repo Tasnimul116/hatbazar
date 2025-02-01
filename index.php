@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hatbazar - A Platform for Farmers, Agents, Customers, and Admins">
     <title>Hatbazar | Agricultural Marketplace</title>
-    <link rel="stylesheet" href="./public/css/styles.css"> <!-- External CSS -->
+    <link rel="stylesheet" href="./public/css/styles.css"> 
 </head>
 <body>
     <header>
@@ -55,6 +55,6 @@
         <p>&copy; 2025 Hatbazar. All rights reserved. | Agricultural Marketplace</p>
     </footer>
 
-    <script src="js/scripts.js"></script> <!-- External JavaScript -->
+    <script src="js/scripts.js"></script> 
 </body>
 </html>
