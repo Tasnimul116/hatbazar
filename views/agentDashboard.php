@@ -96,8 +96,8 @@ function fetchChatHistory(farmerId) {
                     const sender = msg.sender === 'You' ? 'You' : msg.sender;
                     messageHtml += `<div class="message"><strong>${sender}:</strong> ${msg.message}</div>`;
                 });
-                chatBox.innerHTML = messageHtml; // Update chat box with the new messages
-                scrollToBottom(farmerId); // Optionally, scroll to the bottom of the chat
+                chatBox.innerHTML = messageHtml; 
+                scrollToBottom(farmerId);
             } else {
                 chatBox.innerHTML = "<p>Error loading messages.</p>";
             }

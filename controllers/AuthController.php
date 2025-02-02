@@ -25,10 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         
         if ($stmt = $conn->prepare($sql)) {
-            $stmt->bind_param("ssss", $username, $email, $hashedPassword, $role);  // "ssss" means 4 strings
-
+            $stmt->bind_param("ssss", $username, $email, $hashedPassword, $role);  
             if ($stmt->execute()) {
-                header("Location: ../views/login.php"); // Adjust the path if needed
+                header("Location: ../views/login.php"); 
                 exit();
             } else {
                 $error = "Something went wrong. Please try again.";
