@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Validate form data
-    if (empty($username) || empty($password)) {
+    if (empty($username) && empty($password)) {
         $error = "Please fill in both fields.";
     } else {
         // Prepare SQL to fetch user data from the database
@@ -49,6 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         } 
                         if ($role == 'admin') {
                             header("Location: ../views/adminDashboard.php");
+                        } 
+                        if ($role == 'customer') {
+                            header("Location: ../views/customerDashboard.php");
                         } 
                         
                         exit();

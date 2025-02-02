@@ -10,8 +10,7 @@ html, body {
 
 body {
     display: flex;
-    flex-direction: column; /* Stack header, main, and footer vertically */
-}
+    flex-direction: column; }
 
 
 a {

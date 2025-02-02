@@ -28,16 +28,34 @@
             <?php endif; ?>
             <form action="../controllers/loginController.php" method="POST">
                 <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required><br>
+                <input type="text" id="username" name="username" ><br>
 
                 <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br>
+                <input type="password" id="password" name="password"><br>
 
                 <button type="submit">Login</button>
             </form>
             <p class="register-link">Don't have an account? <a href="./registration.php">Create new account</a></p>
         </section>
     </main>
+    <script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+        let username = document.getElementById("username").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let errorMessage = "";
+
+        if (username === "") {
+            errorMessage = "Username is required!";
+        } else if (password === "") {
+            errorMessage = "Password is required!";
+        }
+
+        if (errorMessage !== "") {
+            event.preventDefault(); // Prevent form submission
+            alert(errorMessage); // Display alert or show error in a div
+        }
+    });
+</script>
 
     <footer>
         <p>&copy; 2025 Hatbazar. All rights reserved. | Agricultural Marketplace</p>

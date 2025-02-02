@@ -22,3 +22,26 @@ CREATE TABLE IF NOT EXISTS products (
     FOREIGN KEY (farmer_id) REFERENCES users(id) ON DELETE CASCADE, 
     INDEX idx_farmer_id (farmer_id) 
 );
+
+CREATE TABLE orders (
+    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT(11) DEFAULT NULL,
+    product_id INT(11) DEFAULT NULL,
+    pickup_location VARCHAR(255) DEFAULT NULL,
+    dropoff_location VARCHAR(255) DEFAULT NULL,
+    order_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    transaction_method ENUM('Cash on Delivery', 'Bkash', 'Bank Transfer') NOT NULL
+);
+
+
+
+CREATE TABLE IF NOT EXISTS messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_id INT NOT NULL,  
+    receiver_id INT NOT NULL,  
+    message TEXT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (receiver_id) REFERENCES users(id) ON DELETE CASCADE
+);
+

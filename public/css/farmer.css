@@ -40,6 +40,7 @@ header .navbar ul li {
 header .navbar ul li a {
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
 header .navbar ul li a:hover {

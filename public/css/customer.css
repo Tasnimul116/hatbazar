@@ -1,0 +1,138 @@
+/* General reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 2.5em;
+    
+}
+h2{
+    padding: 10px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font:bold
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Product List Styles */
+#product-list {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+}
+
+.product h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.product form {
+    margin-top: 20px;
+}
+
+.product input[type="text"],
+.product select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.product button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+    background-color: #45a049;
+}
+
+.product button:active {
+    background-color: #388e3c;
+}
+
+.product select option {
+    padding: 10px;
+}
+
+/* Order Success/Failure messages */
+.alert {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.error {
+    background-color: #f44336;
+}
+
