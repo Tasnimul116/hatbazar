@@ -21,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['action']) && $_POST['a
 }
 
 
-//i want send msg for agent to farmer
 
 // Fetch Messages for Chat
 if (isset($_GET['agentId'])) {

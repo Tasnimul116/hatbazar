@@ -14,19 +14,20 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="./">Home</a></li>
+                <li><a href="./views/contact.php">Contact</a></li>
                 <li><a href="./views/login.php">Login</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <h2>Welcome to Hatbazar</h2>
-            <p>Your one-stop platform connecting farmers, agents, and customers in the agricultural marketplace.</p>
-        </section>
+    <section class="hero">
+    <div class="hero-content">
+        <h2>Welcome to Hatbazar</h2>
+        <p>Your one-stop platform connecting farmers, agents, and customers in the agricultural marketplace.</p>
+    </div>
+</section>
 
         <section class="about">
             <h2>About Hatbazar</h2>
@@ -40,7 +41,7 @@
             <h2>Features</h2>
             <ul>
                 <li>Farmers can list and manage their products.</li>
-                <li>Agents can buy from farmers and sell to customers.</li>
+                <li>Agents help the farmer.</li>
                 <li>Customers can browse and purchase products with ease.</li>
                 <li>Admins oversee the entire platform and ensure smooth operations.</li>
             </ul>
