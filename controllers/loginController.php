@@ -11,8 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
     $password = $_POST['password'];
 
-    // Validate form data
-    if (empty($username) && empty($password)) {
+    // Check if username or password is empty
+    if (empty($username) || empty($password)) {
         $error = "Please fill in both fields.";
     } else {
         // Prepare SQL to fetch user data from the database
@@ -36,35 +36,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($stmt->fetch()) {
                     // Verify password
                     if (password_verify($password, $dbPassword)) {
+                        // Start a session and set session variables
                         $_SESSION['user_id'] = $id;
                         $_SESSION['username'] = $dbUsername;
                         $_SESSION['role'] = $role;
 
+                        // Redirect based on user role
                         if ($role == 'farmer') {
                             header("Location: ../views/farmerDashboard.php");
-                          
-                        }
-                        if ($role == 'agent') {
+                        } elseif ($role == 'agent') {
                             header("Location: ../views/agentDashboard.php");
-                        } 
-                        if ($role == 'admin') {
+                        } elseif ($role == 'admin') {
                             header("Location: ../views/adminDashboard.php");
-                        } 
-                        if ($role == 'customer') {
+                        } elseif ($role == 'customer') {
                             header("Location: ../views/customerDashboard.php");
-                        } 
+                        }
                         
                         exit();
                     } else {
+                        // Incorrect password
                         $error = "Invalid username or password.";
                     }
                 }
             } else {
+                // User not found
                 $error = "Invalid username or password.";
             }
 
             $stmt->close();
         } else {
+            // Database error
             $error = "Something went wrong. Please try again later.";
         }
     }

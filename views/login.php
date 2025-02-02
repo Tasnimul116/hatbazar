@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Hatbazar</title>
-    <link rel="stylesheet" href="../public/css/login.css"> <!-- External CSS -->
+    <link rel="stylesheet" href="../public/css/login.css"> 
 </head>
 <body>
 <header>
@@ -51,8 +51,8 @@
         }
 
         if (errorMessage !== "") {
-            event.preventDefault(); // Prevent form submission
-            alert(errorMessage); // Display alert or show error in a div
+            event.preventDefault(); 
+            alert(errorMessage); 
         }
     });
 </script>
