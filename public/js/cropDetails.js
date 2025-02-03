@@ -7,10 +7,8 @@ function fetchCropDetails() {
             const data = JSON.parse(this.responseText);
             const dataTable = document.getElementById("dataTable");
 
-            // Clear the table
             dataTable.innerHTML = "";
 
-            // Create a table to display the data
             const table = document.createElement("table");
             table.innerHTML = `
                 <thead>

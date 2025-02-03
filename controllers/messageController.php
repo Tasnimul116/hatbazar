@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../config/database.php';
+ include '../config/database.php';
 
 // this is for farmer 
 // Send Message

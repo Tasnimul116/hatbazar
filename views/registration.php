@@ -14,7 +14,6 @@
         <nav class="navbar">
             <ul>
                 <li><a href="../index.php">Home</a></li>
-                <li><a href="./about.php">About Us</a></li>
                 <li><a href="./contact.php">Contact</a></li>
                 <li><a href="./login.php">Login</a></li>
             </ul>
@@ -30,34 +29,37 @@
                 <p class="error"><?php echo $error; ?></p>
             <?php endif; ?>
 
-            <form id="registrationForm" action="../controllers/authcontroller.php" method="POST" onsubmit="return validateForm()">
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required><br>
+            <form id="registrationForm" action="../controllers/registrationController.php" method="POST" onsubmit="return validateForm()">
+    <div id="errorMessages" style="color: red;"></div> 
 
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
 
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
 
-                <label for="confirmPassword">Confirm Password:</label><br>
-                <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
 
-                <label for="role">Role:</label><br>
-                <select id="role" name="role" required>
-                    <option value="farmer">Farmer</option>
-                    <option value="agent">Agent</option>
-                    <option value="customer">Customer</option>
-                </select><br>
+    <label for="confirmPassword">Confirm Password:</label><br>
+    <input type="password" id="confirmPassword" name="confirmPassword"><br>
 
-                <button type="submit">Register</button>
-            </form>
+    <label for="role">Role:</label><br>
+    <select id="role" name="role">
+        <option value="farmer">Farmer</option>
+        <option value="agent">Agent</option>
+        <option value="customer">Customer</option>
+    </select><br>
+
+    <button type="submit">Register</button>
+</form>
+
         </section>
     </main>
 
 
-    <footer>
+    <!-- <footer>
         <p>&copy; 2025 Hatbazar. All rights reserved. | Agricultural Marketplace</p>
-    </footer>
+    </footer> -->
 </body>
 </html>

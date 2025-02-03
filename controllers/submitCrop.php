@@ -2,7 +2,7 @@
 session_start();
 
 // Include database connection
-include_once '../config/database.php';
+ include '../config/database.php';
 
 // Check if the user is logged in and is a farmer
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'farmer') {
@@ -31,9 +31,14 @@ $sql = "INSERT INTO products (farmer_id, crop_name, quantity, price, location, c
 if ($stmt = $conn->prepare($sql)) {
     $stmt->bind_param("isddssss", $farmerId, $cropName, $quantity, $price, $location, $contact, $deliveryTime, $transactionMethod);
     if ($stmt->execute()) {
-        echo json_encode(["success" => true, "message" => "Crop details submitted successfully."]);
+        echo "<script>
+        alert('Crop details submitted successfully');
+        window.location.href = '../views/farmerDashboard.php';
+    </script>";
     } else {
-        echo json_encode(["success" => false, "message" => "Error submitting crop details: " . $stmt->error]);
+        echo "<script>
+        alert('Error submitting crop details: " . $stmt->error . "');
+    </script>";
     }
     $stmt->close();
 } else {

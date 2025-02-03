@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../config/database.php';
+ include '../config/database.php';
 
 // Check if the user is an admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
@@ -39,10 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($username) || empty($email) || empty($role)) {
         $error = "All fields are required.";
     } else {
-        // Debugging: Check the form data
-        // var_dump($_POST); // To check the data being sent
-        
-        // Update user details in the database
+       
         $stmt = $conn->prepare("UPDATE users SET username = ?, email = ?, role = ? WHERE id = ?");
         if ($stmt === false) {
             echo "Error preparing statement: " . $conn->error;

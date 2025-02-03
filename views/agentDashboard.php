@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../config/database.php';
+ include '../config/database.php';
 
 // Check if the user is an agent and logged in
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'agent') {
@@ -54,15 +54,13 @@ function sendMessage(farmerId) {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '../controllers/agentController.php', true);
 
-    // Set up the callback for when the request finishes
     xhr.onload = function() {
         if (xhr.status >= 200 && xhr.status < 300) {
             const data = JSON.parse(xhr.responseText);
             if (data.success) {
                 alert('Message sent successfully!');
-                form.style.display = 'none'; // Hide the form after sending the message
+                form.style.display = 'none'; 
 
-                // Call the fetchChatHistory immediately after the message is sent
                 fetchChatHistory(farmerId); 
                 location.reload();
             } else {
@@ -77,7 +75,6 @@ function sendMessage(farmerId) {
         alert('Network error. Please try again later.');
     };
 
-    // Send the request
     xhr.send(formData);
 }
 
@@ -85,7 +82,6 @@ function fetchChatHistory(farmerId) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', `../controllers/agentController.php?farmerId=${farmerId}`, true);
 
-    // Set up the callback for when the request finishes
     xhr.onload = function() {
         if (xhr.status >= 200 && xhr.status < 300) {
             const data = JSON.parse(xhr.responseText);
@@ -110,7 +106,6 @@ function fetchChatHistory(farmerId) {
         alert('Network error. Please try again later.');
     };
 
-    // Send the request
     xhr.send();
 }
 
@@ -170,7 +165,7 @@ function scrollToBottom(farmerId) {
 
                         <form id="message-form-<?= $farmer['id'] ?>" style="display:none;" method="POST" onsubmit="event.preventDefault(); sendMessage(<?= $farmer['id'] ?>)">
                             <input type="hidden" name="farmerId" value="<?= $farmer['id'] ?>">
-                            <textarea name="message" placeholder="Enter your message" required></textarea>
+                            <textarea name="message" placeholder="Enter your message" ></textarea>
                             <button type="submit">Send</button>
                         </form>
                     </div>

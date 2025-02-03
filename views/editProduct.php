@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../config/database.php';
+ include '../config/database.php';
 
 // Ensure admin access
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {

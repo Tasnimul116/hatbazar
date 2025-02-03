@@ -1,8 +1,6 @@
 <?php
-// Include database connection
-include_once '../config/database.php'; // Ensure this file contains the correct connection logic
+include_once '../config/database.php'; 
 
-// Initialize variables
 $error = '';
 
 // Handle form submission
@@ -30,7 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../views/login.php"); 
                 exit();
             } else {
-                $error = "Something went wrong. Please try again.";
+                
+                echo "<script>
+        alert('Error submitting crop details: " . $stmt->error . "');
+    </script>";
             }
 
             $stmt->close();
