@@ -30,7 +30,7 @@
                 <p class="error"><?php echo $error; ?></p>
             <?php endif; ?>
 
-            <form id="registrationForm" action="../controllers/authcontroller.php" method="POST" onsubmit="return validateForm()">
+            <form id="registrationForm" action="../controllers/registrationController.php" method="POST" onsubmit="return validateForm()">
                 <label for="username">Username:</label><br>
                 <input type="text" id="username" name="username" required><br>
 
